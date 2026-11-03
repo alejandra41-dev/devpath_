@@ -1,0 +1,96 @@
+.panel-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: white;
+}
+
+.bienvenida {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: var(--accent-blue);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+}
+
+.xp-badge {
+    background: #ffd700;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.barra-mini-bg {
+    background: rgba(255, 255, 255, 0.1);
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    width: 120px;
+}
+
+.barra-mini-fill {
+    background: #4caf50; /* Color verde para progreso docente */
+    height: 100%;
+    border-radius: 4px;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-blue);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--accent-blue);
+}
+
+.rol-tag {
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.rol-tag.admin { background: #ff4757; }
+.rol-tag.profesor { background: #4caf50; }
+.rol-tag.estudiante { background: #2f3542; }
+
+.btn-eliminar {
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+}

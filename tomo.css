@@ -1,0 +1,176 @@
+/* css/tomo.css - Estilos para la lectura de la teoría */
+
+.tomo-main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Barra superior */
+.tomo-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btn-volver {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.tomo-badge {
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: rgba(230, 81, 0, 0.2); /* Naranja para Frontend */
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
+/* Layout dividido: Menú lateral + Contenido */
+.tomo-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Menú Lateral (Índice) */
+.tomo-sidebar {
+    width: 280px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 90px; /* Hace que el menú baje contigo al hacer scroll */
+}
+
+.tomo-sidebar h3 {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.indice-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.indice-lista li {
+    margin-bottom: 10px;
+}
+
+.indice-lista a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.indice-lista a:hover, .indice-lista a.activo {
+    background: rgba(126, 214, 255, 0.1);
+    color: var(--accent-blue);
+    border-left: 3px solid var(--accent-blue);
+}
+
+/* Contenido Principal de Lectura */
+.tomo-content {
+    flex: 1; /* Ocupa el resto del espacio */
+    background: var(--card-bg);
+    padding: 40px 50px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+}
+
+.tomo-titulo {
+    font-family: var(--font-pixel);
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.tomo-content h2 {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.tomo-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.tomo-content ul {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.tomo-content li {
+    margin-bottom: 10px;
+}
+
+.separador {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+/* Caja para mostrar código */
+.caja-codigo {
+    background: #0f0d14;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-blue);
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.caja-codigo pre {
+    margin: 0;
+    color: #a5d6ff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 900px) {
+    .tomo-layout {
+        flex-direction: column; /* Apila el menú arriba y el texto abajo */
+    }
+    
+    .tomo-sidebar {
+        width: 100%;
+        position: static; /* Quita el sticky en móviles */
+    }
+
+    .tomo-content {
+        padding: 30px 20px;
+    }
+}

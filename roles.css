@@ -1,0 +1,126 @@
+/* css/roles.css - Estilos para la selección de roles */
+
+.roles-main {
+    flex-grow: 1; /* Ocupa el espacio disponible entre header y footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    
+    /* Fondo animado oscuro */
+    background: linear-gradient(rgba(15, 13, 20, 0.8), rgba(15, 13, 20, 0.9)), 
+                url('../media/img/fondo.gif') center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.roles-container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.roles-header {
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.peppa-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.roles-title {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.roles-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Cuadrícula de Tarjetas de Rol --- */
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.role-card {
+    background: rgba(35, 36, 58, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.role-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.role-card h2 {
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.role-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Efectos Hover Mágicos para cada rol */
+.role-card:hover {
+    transform: translateY(-10px);
+}
+
+.role-card:hover .role-icon {
+    transform: scale(1.2);
+}
+
+.estudiante:hover {
+    border-color: #7ed6ff; /* Azul claro */
+    box-shadow: 0 10px 40px rgba(126, 214, 255, 0.3);
+}
+.estudiante:hover h2 { color: #7ed6ff; }
+
+.profesor:hover {
+    border-color: #a87eff; /* Morado/Mágico */
+    box-shadow: 0 10px 40px rgba(168, 126, 255, 0.3);
+}
+.profesor:hover h2 { color: #a87eff; }
+
+.admin:hover {
+    border-color: #ff7e7e; /* Rojo/Poder */
+    box-shadow: 0 10px 40px rgba(255, 126, 126, 0.3);
+}
+.admin:hover h2 { color: #ff7e7e; }
+
+/* Animaciones de entrada */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

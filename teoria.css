@@ -1,0 +1,327 @@
+/* css/teoria.css - Estilos para la Biblioteca de Conocimiento */
+
+.teoria-main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Buscador Central --- */
+.buscador-seccion {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(rgba(24, 24, 38, 0.9), rgba(24, 24, 38, 0.6)), url('../media/img/noche.gif') center center / cover;
+    border-radius: 24px;
+    border: 1px solid rgba(126, 214, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.page-title {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+}
+
+.buscador-seccion p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: border-color 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(126, 214, 255, 0.2);
+}
+
+.search-icon {
+    font-size: 1.2rem;
+    padding: 0 15px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    padding: 12px 5px;
+    outline: none;
+}
+
+.btn-buscar {
+    background: var(--accent-dark-blue);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-buscar:hover {
+    background: var(--accent-blue);
+    color: #000;
+}
+
+/* --- Archivos / Categorías --- */
+.subtitulo-seccion {
+    font-family: var(--font-pixel);
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.archivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.archivo-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.archivo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(46, 56, 86, 0.8);
+}
+
+.archivo-icon {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.archivo-info h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.archivo-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Colores específicos para cada archivo en hover */
+.frontend:hover { border-color: #e65100; }
+.logica:hover { border-color: #9c27b0; }
+.bd:hover { border-color: #0277bd; }
+.herramientas:hover { border-color: #607d8b; }
+
+/* --- Glosario --- */
+.glosario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.termino-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+}
+
+.termino-box h4 {
+    color: var(--accent-blue);
+    font-family: var(--font-pixel);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.termino-box p {
+    color: #d6d6e7;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ADICIONES: Buscador, contenido y navegación de temas
+   ═══════════════════════════════════════════════════════ */
+
+/* Posicionar el contenedor del buscador para el dropdown */
+#buscador-container {
+    position: relative;
+}
+
+/* Resultados del buscador */
+.resultados-busqueda {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #1a1b2e;
+    border: 1px solid rgba(126,214,255,0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 500;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.resultado-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
+}
+
+.resultado-item:last-child { border-bottom: none; }
+
+.resultado-item:hover,
+.resultado-item.foco {
+    background: rgba(126,214,255,0.1);
+}
+
+.resultado-icono { font-size: 1.3rem; }
+
+.resultado-info { display: flex; flex-direction: column; }
+.resultado-info strong { font-size: 0.9rem; }
+.resultado-info small  { font-size: 0.78rem; opacity: 0.6; margin-top: 2px; }
+
+.resultado-item mark {
+    background: rgba(126,214,255,0.3);
+    color: var(--accent-blue);
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.resultado-vacio {
+    padding: 1rem;
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* Mini ejercicio y buenas prácticas */
+.mini-ejercicio,
+.buenas-practicas {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+.mini-ejercicio {
+    background: rgba(108,92,231,0.1);
+    border-left: 4px solid #6c5ce7;
+}
+
+.buenas-practicas {
+    background: rgba(0,184,148,0.08);
+    border-left: 4px solid #00b894;
+}
+
+.mini-ejercicio h4,
+.buenas-practicas h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mini-ejercicio h4    { color: #a29bfe; }
+.buenas-practicas h4  { color: #00b894; }
+
+/* Navegación anterior / siguiente */
+.navegacion-temas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-nav-tema {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.3rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    max-width: 48%;
+}
+
+.btn-nav-tema:hover {
+    background: rgba(126,214,255,0.1);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-siguiente { margin-left: auto; text-align: right; }
+
+/* ── Adaptación Celular ── */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+    }
+    
+    .search-box input {
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        border: 2px solid rgba(255,255,255,0.2);
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .btn-buscar {
+        width: 100%;
+    }
+}

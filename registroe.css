@@ -1,0 +1,225 @@
+/* css/registroe.css - Estilos para Registro y Login */
+
+.auth-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+}
+
+/* Contenedor principal dividido en 2 */
+.auth-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background: var(--card-bg);
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Para que las esquinas de la imagen no se salgan */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Panel Izquierdo (Imagen) --- */
+.auth-banner {
+    flex: 1; /* Ocupa la mitad del espacio */
+    background: linear-gradient(rgba(24, 24, 38, 0.5), rgba(24, 24, 38, 0.8)),
+                url('../media/img/paisaje.gif') center center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.peppa-icon {
+    width: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.auth-banner h2 {
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.auth-banner p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Panel Derecho (Formulario) --- */
+.auth-form-box {
+    flex: 1; /* Ocupa la otra mitad */
+    padding: 50px 40px;
+    background: rgba(35, 36, 58, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Botones Sociales */
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Separador "O" */
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.divider span {
+    background: rgba(35, 36, 58, 1);
+    padding: 0 15px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    position: relative;
+}
+
+/* Campos de Input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(126, 214, 255, 0.2);
+}
+
+/* Botón de Registro */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent-dark-blue);
+    color: #ffffff;
+    border: 2px solid #1c0d5e;
+    border-radius: 12px;
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--accent-blue);
+    color: #000000;
+}
+
+/* Textos de abajo */
+.terms {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-text {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-main);
+}
+
+.terms a, .login-text a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms a:hover, .login-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- Adaptación a Celulares --- */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column; /* Pone la imagen arriba y el form abajo */
+    }
+    
+    .auth-banner {
+        padding: 30px 20px;
+    }
+
+    .auth-form-box {
+        padding: 30px 20px;
+    }
+}

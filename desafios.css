@@ -1,0 +1,223 @@
+/* css/desafios.css - Estilos para el Tablero de Misiones */
+
+.desafios-main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.desafios-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.desafios-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Misión Destacada (Desafío Diario) --- */
+.mision-destacada {
+    background: linear-gradient(135deg, rgba(35, 36, 58, 0.9), rgba(21, 99, 218, 0.2));
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px rgba(126, 214, 255, 0.2);
+    position: relative;
+}
+
+.mision-destacada-info {
+    padding: 40px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.etiqueta-diaria {
+    background: #ff5722;
+    color: white;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mision-destacada-info h2 {
+    font-family: var(--font-pixel);
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.mision-destacada-info p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.recompensas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.xp-ganancia { color: #ffeb3b; font-weight: bold; }
+.moneda-ganancia { color: #ff9800; font-weight: bold; }
+
+.btn-aceptar-mision {
+    background: var(--accent-dark-blue);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-family: var(--font-pixel);
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-blue);
+    display: inline-block;
+    width: max-content;
+}
+
+.btn-aceptar-mision:hover {
+    background: var(--accent-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+
+.mision-destacada-img {
+    flex: 1;
+    min-width: 250px;
+}
+
+.mision-destacada-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Misiones Disponibles --- */
+.subtitulo-seccion {
+    font-family: var(--font-pixel);
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.retos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.reto-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reto-card:hover:not(.bloqueado) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--text-muted);
+}
+
+.reto-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Etiquetas de lenguaje */
+.lenguaje-badge { padding: 5px 10px; border-radius: 8px; color: #fff; }
+.html { background: #e65100; }
+.js { background: #f57f17; color: #000; }
+.sql { background: #0277bd; }
+
+/* Dificultad */
+.facil { color: #4caf50; }
+.media { color: #ff9800; }
+.dificil { color: #f44336; }
+
+.reto-card h3 {
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.reto-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.reto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.btn-jugar {
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-jugar:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Estado Bloqueado */
+.reto-card.bloqueado {
+    opacity: 0.6;
+    background: repeating-linear-gradient(45deg, rgba(35, 36, 58, 1), rgba(35, 36, 58, 1) 10px, rgba(20, 20, 30, 1) 10px, rgba(20, 20, 30, 1) 20px);
+    cursor: not-allowed;
+}
+
+.candado {
+    color: #f44336;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Respons

@@ -1,0 +1,321 @@
+/* global.css - Estilos base para toda la web */
+
+:root {
+    /* Variables de colores de Dev Path */
+    --bg-color: #181826;
+    --header-bg: #000000;
+    --card-bg: #23243a;
+    --text-main: #ffffff;
+    --text-muted: #d6d6e7;
+    --accent-blue: #7ed6ff;
+    --accent-dark-blue: #1563da;
+    --font-main: 'Montserrat', sans-serif;
+    --font-pixel: 'Press Start 2P', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer siempre quede abajo */
+}
+
+/* HEADER Y NAVEGACIÓN MODERNA CON FLEXBOX */
+header {
+    background-color: var(--header-bg);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky; /* Mejor que fixed, evita que tape el contenido inicial */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-family: var(--font-pixel);
+    color: var(--text-main);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.logo-text span {
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-ingresar {
+    background-color: var(--accent-dark-blue);
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    padding: 12px 20px !important;
+    border: 2px solid #1c0d5e;
+}
+
+.btn-ingresar:hover {
+    background-color: var(--accent-blue);
+    color: var(--header-bg) !important;
+}
+/* --- FOOTER GLOBAL --- */
+.site-footer {
+    background-color: var(--header-bg);
+    padding: 40px 20px 20px;
+    margin-top: auto; /* Empuja el footer al fondo de la página */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-main);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+/* --- ESTILOS EQUIPO DESARROLLADOR --- */
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.dev-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(126, 214, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dev-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    background: rgba(21, 99, 218, 0.1);
+}
+
+.dev-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+    padding: 5px;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.dev-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dev-card h3 {
+    font-family: var(--font-pixel);
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.dev-rol {
+    display: block;
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.dev-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.dev-social {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        height: auto;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea si no caben */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Letra un poco más pequeña para ganar espacio */
+        padding: 8px 12px;
+    }
+
+    .logo-text {
+        display: none; /* Ocultamos el texto "Dev Path" para que solo quede el icono y no estorbe */
+    }
+}
+/* Escondemos el botón de hamburguesa en PC */
+.menu-hamburguesa {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- MODO CELULAR --- */
+/* 1. REGLA GENERAL (Para la computadora) */
+/* DEBE ESTAR AFUERA de cualquier @media {...} */
+.menu-hamburguesa {
+    display: none; /* ¡Esta es la línea mágica que lo oculta en PC! */
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 2. REGLA PARA MÓVILES (Para el celular) */
+@media (max-width: 768px) {
+    
+    .menu-hamburguesa {
+        display: block; /* Aquí lo encendemos de nuevo */
+    }
+
+    /* ... aquí sigue el resto de tu código de .nav-links que ya tenías ... */
+}/* =========================================
+   ESTO DEBE SER LO ÚLTIMO EN TU ARCHIVO
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* El header necesita ser relativo para que el menú flote debajo de él */
+    header {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    /* Mostramos la hamburguesa */
+    .menu-hamburguesa {
+        display: block !important;
+    }
+
+    /* Escondemos los botones normales y armamos la columna */
+    .nav-links {
+        display: none !important; /* Forzamos a que se oculte */
+        flex-direction: column;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.98); 
+        position: absolute;
+        top: 100%; /* Que empiece justo debajo del header */
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 1000;
+        border-bottom: 2px solid var(--accent-blue);
+    }
+
+    /* Clase que enciende JavaScript al tocar el botón */
+    .nav-links.activo {
+        display: flex !important; /* Forzamos a que se muestre como columna */
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}

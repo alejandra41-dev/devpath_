@@ -1,0 +1,355 @@
+/* css/index.css - Estilos específicos para la página de inicio */
+
+/* --- SECCIÓN HERO PRINCIPAL --- */
+.hero-section {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px; /* Evita que se estire demasiado en monitores gigantes */
+    min-height: 60vh; /* Ocupará al menos el 60% de la altura de la pantalla */
+    
+    /* Nota: como el css está en la carpeta 'css', subimos un nivel '../' para llegar a 'media' */
+    background: url('../media/img/paisaje2.gif') center center / cover no-repeat;
+    
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 40px;
+}
+
+/* La tarjetita oscura dentro del paisaje */
+.hero-card {
+    background-color: rgba(60, 51, 77, 0.9); /* Un fondo oscuro pero un poco transparente */
+    backdrop-filter: blur(5px); /* Le da un efecto moderno de cristal borroso al fondo */
+    padding: 30px;
+    border-radius: 18px;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-main);
+}
+
+.btn-hero {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    background: #3c334d;
+    color: #cdc7da;
+    border: 2px solid #57486f;
+    font-family: var(--font-pixel);
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    color: #ffffff;
+    background: #57486f;
+    border-color: var(--accent-blue);
+    transform: translateY(-3px); /* Pequeño efecto de salto al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(126, 214, 255, 0.2);
+}
+
+/* Hacerlo responsive para celulares */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 20px;
+        align-items: flex-end; /* En celulares, la caja se va hacia abajo */
+        min-height: 50vh;
+    }
+    
+    .hero-card {
+        width: 100%;
+    }
+}
+/* --- SECCIÓN MENU CURSOS (DISEÑO ORIGINAL) --- */
+.menu-cursos {
+    background: rgba(44, 44, 66, 0.9);
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.diviertete {
+    font-size: 22px;
+    color: #cdc7da;
+    font-family: var(--font-pixel);
+    margin-bottom: 15px;
+}
+
+.aventura {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Ocultar los inputs radio */
+.menu-cursos input[type="radio"] {
+    display: none;
+}
+
+/* Contenedor de los botones */
+.menu-cursos-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Estilo de las "pestañas" */
+.menu-cursos-botones label {
+    cursor: pointer;
+    padding: 10px 25px;
+    background: #23243a;
+    color: #ffffff;
+    border-radius: 24px;
+    font-weight: 700;
+    border: 2px solid #2e3856;
+    transition: all 0.3s ease;
+}
+
+.menu-cursos-botones label:hover {
+    background: var(--bg-color);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+/* Lógica para iluminar la pestaña seleccionada (Magia de CSS) */
+#popular:checked ~ .menu-cursos-botones label[for="popular"],
+#webdev:checked ~ .menu-cursos-botones label[for="webdev"],
+#datasci:checked ~ .menu-cursos-botones label[for="datasci"],
+#tools:checked ~ .menu-cursos-botones label[for="tools"] {
+    background: var(--bg-color);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(126, 214, 255, 0.2);
+}
+
+/* Ocultar todas las tarjetas por defecto */
+.cursos-cards {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Mostrar tarjetas según el input seleccionado */
+#popular:checked ~ #cursos-popular,
+#webdev:checked ~ #cursos-webdev,
+#datasci:checked ~ #cursos-datasci,
+#tools:checked ~ #cursos-tools {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ESTILOS DE LAS TARJETAS --- */
+.card {
+    background: #23243a;
+    color: #fff;
+    width: 320px;
+    border-radius: 18px;
+    border: 2px solid #2e3856;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-blue);
+}
+
+.card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: #d6d6e7;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-badge {
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border: 1.5px solid var(--accent-blue);
+    border-radius: 8px;
+}
+
+.card-link {
+    background: var(--accent-blue);
+    color: #000;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.card-link:hover {
+    background: #5bbde6; /* Un azul un poco más oscuro al pasar el mouse */
+}
+/* --- SECCIÓN GAMIFICACIÓN (NUBES/LALA) --- */
+.game-features-section {
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    
+    /* EFECTO PARALLAX: La imagen se queda fija mientras bajas */
+    background: url('../media/img/nubes.gif') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Esta es la magia del Parallax */
+}
+
+/* Panel de cristal sobre el GIF */
+.glass-panel {
+    background: rgba(24, 24, 38, 0.75); /* Oscuro y transparente */
+    backdrop-filter: blur(8px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(126, 214, 255, 0.2); /* Borde azul muy sutil */
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.game-title {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Cuadrícula de características */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    background: rgba(46, 56, 86, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    background: rgba(46, 56, 86, 0.8);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(126, 214, 255, 0.4));
+}
+
+.feature-box h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.feature-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Responsividad extra para móviles */
+@media (max-width: 768px) {
+    .glass-panel {
+        padding: 30px 20px;
+    }
+    
+    .game-title {
+        font-size: 1.2rem;
+    }
+    
+    /* En móviles, a veces el parallax da problemas de rendimiento, así que lo volvemos normal */
+    .game-features-section {
+        background-attachment: scroll;
+    }
+}
+@media (max-width: 768px) {
+    /* En el index: las tarjetas pasan a ser una sola columna */
+    .cursos-cards {
+        grid-template-columns: 1fr; 
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 100%; /* Que usen todo el ancho del celular */
+    }
+
+    /* En la página de aprender: la cuadrícula se vuelve vertical */
+    .cursos-grid-avanzado {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

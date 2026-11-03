@@ -1,0 +1,132 @@
+/* css/legal.css - Estilos para páginas legales y documentación larga */
+
+.legal-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Permite que el contenido largo empiece desde arriba */
+    padding: 100px 20px 60px; /* Más espacio arriba para que no lo tape el header */
+    background: linear-gradient(rgba(24, 24, 38, 0.9), rgba(24, 24, 38, 0.9)), 
+                url('../media/img/fondo.gif') center center / cover no-repeat fixed;
+}
+
+.legal-container {
+    background: rgba(35, 36, 58, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(126, 214, 255, 0.2);
+    border-radius: 24px;
+    padding: 60px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Encabezado del documento */
+.legal-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+}
+
+.legal-header h1 {
+    font-family: var(--font-pixel);
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.last-update {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Cuerpo del texto */
+.legal-content h3 {
+    color: var(--accent-blue);
+    font-family: var(--font-main);
+    font-size: 1.3rem;
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legal-content h3::before {
+    content: "◈"; /* Un pequeño diamante decorativo */
+    font-size: 0.8rem;
+}
+
+.legal-content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* Listas estilizadas */
+.legal-content ul, .legal-content ol {
+    margin: 20px 0 30px 25px;
+    color: var(--text-muted);
+}
+
+.legal-content li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    padding-left: 10px;
+}
+
+.legal-content strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Bloque de advertencia o nota importante */
+.nota-legal {
+    background: rgba(126, 214, 255, 0.1);
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    margin: 40px 0;
+}
+
+.nota-legal p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* Botón de regreso al pie */
+.legal-footer {
+    margin-top: 50px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.btn-volver-legal {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-volver-legal:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 30px 20px;
+    }
+    
+    .legal-header h1 {
+        font-size: 1.4rem;
+    }
+}
