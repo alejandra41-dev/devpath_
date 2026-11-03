@@ -1,0 +1,159 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) { header("Location: login.html"); exit(); }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomo: Frontend - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tomo.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="aprender.php">Aprender</a>
+            <a href="desafios.html">Desafíos</a>
+            <a href="teoria.php" style="color: var(--accent-blue);">Teoría</a>
+            <a href="tutoriales.html">Tutoriales</a>
+            <a href="roles.html" class="btn-ingresar">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="tomo-main">
+        
+        <div class="tomo-top-bar">
+            <a href="teoria.php" class="btn-volver">⬅ Volver a la Biblioteca</a>
+            <span class="tomo-badge frontend-badge">Tomo: Frontend (UI)</span>
+        </div>
+
+        <div class="tomo-layout">
+            
+            <aside class="tomo-sidebar">
+                <h3>Índice del Tomo</h3>
+                <ul class="indice-lista">
+                    <li><a href="#cap1" class="activo">1. ¿Qué es el Frontend?</a></li>
+                    <li><a href="#cap2">2. Etiquetas HTML básicas</a></li>
+                    <li><a href="#cap3">3. Introducción a CSS</a></li>
+                    <li><a href="#cap4">4. Flexbox y Grid</a></li>
+                </ul>
+            </aside>
+
+            <article class="tomo-content">
+                
+                <h1 class="tomo-titulo" id="cap1">1. ¿Qué es el Frontend?</h1>
+                <p>El Frontend es, básicamente, todo lo que ves en tu pantalla y con lo que puedes interactuar cuando entras a una página web. Imagina que hacer una web es como construir una casa:</p>
+                <ul>
+                    <li><strong>HTML:</strong> Son los ladrillos, las paredes y el techo. Da la estructura.</li>
+                    <li><strong>CSS:</strong> Es la pintura, los cuadros y la decoración. Hace que se vea bien.</li>
+                    <li><strong>JavaScript:</strong> Es la electricidad y el agua. Hace que las cosas funcionen y reaccionen si tocas un botón.</li>
+                </ul>
+
+                <hr class="separador">
+
+                <h2 id="cap2">2. Etiquetas HTML básicas</h2>
+                <p>Para armar el esqueleto de nuestra página usamos <strong>etiquetas</strong>. Casi todas funcionan igual: las abres, pones algo adentro y las cierras con una barra diagonal <code>/</code>.</p>
+                
+                <p>Aquí tienes las que vas a usar el 90% del tiempo:</p>
+                
+                <div class="caja-codigo">
+                    <pre><code>
+&lt;!-- Esto es un título grande --&gt;
+&lt;h1&gt;Bienvenido a mi web&lt;/h1&gt;
+
+&lt;!-- Esto es un párrafo normal --&gt;
+&lt;p&gt;Aquí puedo escribir texto largo.&lt;/p&gt;
+
+&lt;!-- Esto es un enlace para ir a otra página --&gt;
+&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;
+
+&lt;!-- Esto es una caja vacía para agrupar cosas --&gt;
+&lt;div&gt;
+    &lt;p&gt;Este texto está dentro de una caja.&lt;/p&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </div>
+
+                <hr class="separador">
+
+                <h2 id="cap3">3. Introducción a CSS</h2>
+                <p>Ahora que tenemos el esqueleto, vamos a ponerlo guapo. En CSS seleccionamos una etiqueta HTML y le aplicamos "reglas" de diseño.</p>
+                <p>Por ejemplo, si queremos que todos los botones de nuestra página sean azules y tengan letras blancas, haríamos esto:</p>
+
+                <div class="caja-codigo">
+                    <pre><code>
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px; /* Esto redondea las esquinas */
+}
+                    </code></pre>
+                </div>
+                
+                <p>Para no afectar a todos los botones por igual, solemos usar <strong>Clases</strong>. En el HTML le ponemos <code>class="boton-magico"</code> y luego en el CSS lo llamamos usando un punto antes del nombre: <code>.boton-magico { ... }</code>.</p>
+
+                <hr class="separador">
+
+                <h2 id="cap4">4. Flexbox y Grid (La magia de acomodar cosas)</h2>
+                <p>Antes, centrar cosas en una web era un dolor de cabeza. Hoy tenemos dos superpoderes para organizar nuestra página sin sufrir:</p>
+
+                <p><strong>Flexbox:</strong> Imagina que tienes una fila de libros. Flexbox te ayuda a acomodarlos fácilmente: todos a la derecha, todos a la izquierda, o con el mismo espacio entre ellos. Es ideal para organizar elementos en una sola línea (horizontal o vertical).</p>
+                
+                <div class="caja-codigo">
+                    <pre><code>
+/* Así centramos todo perfectamente al medio */
+.caja-flex {
+    display: flex;
+    justify-content: center; /* Centra en horizontal */
+    align-items: center;     /* Centra en vertical */
+}
+                    </code></pre>
+                </div>
+
+                <p><strong>CSS Grid:</strong> Imagina un tablero de ajedrez o de hundir la flota. Grid te permite dividir tu pantalla en columnas y filas, y luego decirle a cada elemento en qué cuadrito debe ir. Es perfecto para hacer la estructura general de la página (como acomodar el header, el menú lateral y el contenido principal).</p>
+
+                <div class="caja-codigo">
+                    <pre><code>
+/* Esto crea 3 columnas del mismo tamaño */
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+                    </code></pre>
+                </div>
+
+                <p>Y listo, con estas bases ya estás preparado para empezar a maquetar tus primeras aventuras en el código.</p>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+</div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

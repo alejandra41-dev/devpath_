@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/registroe.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="aprender.php">Aprender</a>
+            <a href="desafios.html">Desafíos</a>
+            <a href="teoria.html">Teoría</a>
+            <a href="tutoriales.html">Tutoriales</a>
+            <a href="roles.html" class="btn-ingresar">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            
+            <div class="auth-banner">
+                <div class="banner-content">
+                    <img src="media/img/peppa.png" alt="Peppa" class="peppa-icon">
+                    <h2>¡Bienvenido de vuelta!</h2>
+                    <p>Inicia sesión para continuar tu aventura, ver tu progreso y seguir conquistando nuevos lenguajes.</p>
+                </div>
+            </div>
+
+            <div class="auth-form-box">
+                <h2 class="form-title">Iniciar Sesión</h2>
+                
+                <div class="social-login">
+                    <button class="social-btn">
+                        <img src="media/img/google.png" alt="Google"> Google
+                    </button>
+                    <button class="social-btn">
+                        <img src="media/img/github.png" alt="GitHub"> GitHub
+                    </button>
+                </div>
+
+                <div class="divider"><span>O ingresa con tu email</span></div>
+
+                <!-- Mensaje de error del servidor -->
+                <div id="mensaje-error" style="
+                    display: none;
+                    background: #fee2e2;
+                    color: #991b1b;
+                    border: 1px solid #fca5a5;
+                    border-radius: 8px;
+                    padding: 0.75rem 1rem;
+                    margin-bottom: 1rem;
+                    font-size: 0.875rem;
+                "></div>
+
+                <form action="login.php" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Entrar a mi cuenta</button>
+                </form>
+
+                <p class="terms">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </p>
+
+                <p class="login-text">
+                    ¿No tienes una cuenta? <a href="roles.html">Regístrate aquí</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+                <a href="nosotros.html">Sobre nosotros</a>
+                <a href="terminos.html">Términos</a>
+                <a href="privacidad.html">Privacidad</a>
+            </div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Muestra el error que manda login.php en la URL -->
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) { header("Location: login.html"); exit(); }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomo: Herramientas - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tomo.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="aprender.php">Aprender</a>
+            <a href="desafios.html">Desafíos</a>
+            <a href="teoria.php" style="color: var(--accent-blue);">Teoría</a>
+            <a href="tutoriales.html">Tutoriales</a>
+            <a href="roles.html" class="btn-ingresar">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="tomo-main">
+        <div class="tomo-top-bar">
+            <a href="teoria.php" class="btn-volver">⬅ Volver a la Biblioteca</a>
+            <span class="tomo-badge" style="background: rgba(96, 125, 139, 0.2); color: #90a4ae; border-color: #607d8b;">Tomo: Herramientas Dev</span>
+        </div>
+
+        <div class="tomo-layout">
+            <aside class="tomo-sidebar">
+                <h3 style="color: #90a4ae;">Índice del Tomo</h3>
+                <ul class="indice-lista">
+                    <li><a href="#cap1" class="activo">1. El Editor de Código</a></li>
+                    <li><a href="#cap2">2. La Terminal (Sin miedo)</a></li>
+                    <li><a href="#cap3">3. Git: La máquina del tiempo</a></li>
+                    <li><a href="#cap4">4. GitHub</a></li>
+                </ul>
+            </aside>
+
+            <article class="tomo-content">
+                <h1 class="tomo-titulo" id="cap1">1. El Editor de Código</h1>
+                <p>Un programador podría escribir código en el Bloc de Notas, pero sería una tortura. Por eso usamos Editores de Código. El más famoso y el que seguro vas a usar es <strong>Visual Studio Code (VS Code)</strong>.</p>
+                <p>Es genial porque te colorea las palabras para que no te pierdas, te autocompleta el texto y te avisa cuando te falta cerrar una etiqueta.</p>
+
+                <hr class="separador">
+
+                <h2 id="cap2" style="color: #90a4ae;">2. La Terminal (Sin miedo a la pantalla negra)</h2>
+                <p>En las películas de hackers siempre se ve a alguien escribiendo rapidísimo en una pantalla negra. Eso es la terminal. No es más que una forma de decirle a tu computadora qué hacer usando texto en lugar de usar el mouse.</p>
+
+                <div class="caja-codigo" style="border-color: #90a4ae;">
+                    <pre><code>
+# Para crear una carpeta nueva desde la terminal:
+mkdir mi-nuevo-proyecto
+
+# Para entrar a esa carpeta:
+cd mi-nuevo-proyecto
+                    </code></pre>
+                </div>
+
+                <hr class="separador">
+
+                <h2 id="cap3" style="color: #90a4ae;">3. Git: La máquina del tiempo</h2>
+                <p>Seguro alguna vez guardaste un trabajo escolar como "Proyecto_Final_V2_ahorasi_FINAL.docx". Eso es un desastre para organizar el código.</p>
+                <p><strong>Git</strong> es un sistema que toma "fotos" de tu código a medida que avanzas. Si rompes algo, puedes decirle a Git: "Oye, devuélveme el código a cómo estaba ayer en la tarde". ¡Es magia pura!</p>
+
+                <div class="caja-codigo" style="border-color: #90a4ae;">
+                    <pre><code>
+# Iniciar la máquina del tiempo en tu carpeta
+git init
+
+# Tomar una "foto" de los cambios que hiciste
+git commit -m "Agregué la tarjeta de usuario"
+                    </code></pre>
+                </div>
+
+                <hr class="separador">
+
+                <h2 id="cap4" style="color: #90a4ae;">4. GitHub</h2>
+                <p>No confundas Git con GitHub. Si Git es la cámara de fotos, <strong>GitHub es como el Instagram donde subes esas fotos</strong>. Es una plataforma en la nube donde guardas tu código para que no se pierda, y donde otros programadores pueden ver tu trabajo o ayudarte a mejorarlo.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+</div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

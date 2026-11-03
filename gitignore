@@ -1,0 +1,31 @@
+# ============================================================
+# .gitignore — Dev Path
+# ============================================================
+
+# Variables de entorno (¡NUNCA subir al repositorio!)
+.env
+*.env
+
+# Archivos de configuración con contraseñas
+conexion.php
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+error_log
+
+# Archivos temporales PHP
+*.tmp
+*.swp
+
+# Dependencias (si usas Composer en el futuro)
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project

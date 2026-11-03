@@ -1,0 +1,129 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) { header("Location: login.html"); exit(); }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomo: Lógica - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tomo.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="aprender.php">Aprender</a>
+            <a href="desafios.html">Desafíos</a>
+            <a href="teoria.php" style="color: var(--accent-blue);">Teoría</a>
+            <a href="tutoriales.html">Tutoriales</a>
+            <a href="roles.html" class="btn-ingresar">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="tomo-main">
+        <div class="tomo-top-bar">
+            <a href="teoria.php" class="btn-volver">⬅ Volver a la Biblioteca</a>
+            <span class="tomo-badge" style="background: rgba(156, 39, 176, 0.2); color: #ce93d8; border-color: #ab47bc;">Tomo: Lógica y Algoritmos</span>
+        </div>
+
+        <div class="tomo-layout">
+            <aside class="tomo-sidebar">
+                <h3 style="color: #ab47bc;">Índice del Tomo</h3>
+                <ul class="indice-lista">
+                    <li><a href="#cap1" class="activo">1. ¿Qué es un Algoritmo?</a></li>
+                    <li><a href="#cap2">2. Variables y Cajas</a></li>
+                    <li><a href="#cap3">3. Condicionales (If/Else)</a></li>
+                    <li><a href="#cap4">4. Ciclos y Acumuladores</a></li>
+                </ul>
+            </aside>
+
+            <article class="tomo-content">
+                <h1 class="tomo-titulo" id="cap1">1. ¿Qué es un Algoritmo?</h1>
+                <p>Suena a palabra de científico, pero un algoritmo no es más que una receta de cocina. Es una serie de pasos ordenados para resolver un problema.</p>
+                <p>Si quieres hacer un huevo frito, el algoritmo sería:</p>
+                <ul>
+                    <li>1. Poner el sartén al fuego.</li>
+                    <li>2. Echar un poquito de aceite.</li>
+                    <li>3. Romper el huevo y echarlo al sartén.</li>
+                    <li>4. Esperar a que se cocine y servir.</li>
+                </ul>
+                <p>En programación, hacemos exactamente lo mismo, pero en lugar de huevos, procesamos datos.</p>
+
+                <hr class="separador">
+
+                <h2 id="cap2" style="color: #ab47bc;">2. Variables y Cajas</h2>
+                <p>Imagina que tu computadora es una bodega gigante y una <strong>variable</strong> es una caja de cartón donde puedes guardar cosas. A cada caja le pones una etiqueta con un marcador para saber qué tiene adentro.</p>
+                
+                <div class="caja-codigo" style="border-color: #ab47bc;">
+                    <pre><code>
+// Guardamos datos en nuestras "cajas"
+nombre_jugador = "Peppa"
+vidas = 3
+puntuacion = 0
+                    </code></pre>
+                </div>
+                <p>Lo genial de las variables es que, como su nombre lo indica, pueden "variar". Si pierdes una vida, simplemente actualizamos la caja: <code>vidas = 2</code>.</p>
+
+                <hr class="separador">
+
+                <h2 id="cap3" style="color: #ab47bc;">3. Condicionales (If/Else)</h2>
+                <p>Los condicionales son como los guardias de seguridad del código. Toman decisiones basadas en una regla. "SI pasa esto, haz esto; SI NO, haz otra cosa".</p>
+
+                <div class="caja-codigo" style="border-color: #ab47bc;">
+                    <pre><code>
+si (vidas == 0) {
+    mostrar_mensaje("¡Game Over!")
+} sino {
+    mostrar_mensaje("¡Sigue jugando, aún tienes vidas!")
+}
+                    </code></pre>
+                </div>
+
+                <hr class="separador">
+
+                <h2 id="cap4" style="color: #ab47bc;">4. Ciclos y Acumuladores</h2>
+                <p>Las computadoras son increíbles haciendo tareas repetitivas sin aburrirse. Para eso usamos los <strong>ciclos</strong> (como <code>FOR</code> o <code>WHILE</code>). Además, cuando queremos contar cosas dentro de un ciclo, usamos un <strong>acumulador</strong> o contador.</p>
+                <p>Mira cómo funciona la lógica para contar del 1 al 10 e ir sumando puntos:</p>
+
+                <div class="caja-codigo" style="border-color: #ab47bc;">
+                    <pre><code>
+puntos_totales = 0  // Este es nuestro acumulador
+
+para cada nivel desde el 1 hasta el 10:
+    jugar_nivel()
+    puntos_totales = puntos_totales + 100 // Acumulamos los puntos
+    
+mostrar_mensaje("Terminaste. Puntos: " + puntos_totales)
+                    </code></pre>
+                </div>
+                <p>Dominar la lógica de los ciclos es la clave para hacer desde un cajero automático hasta un juego de la vida. ¡Es puro superpoder lógico!</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+</div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

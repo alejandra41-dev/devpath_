@@ -1,0 +1,105 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) { header("Location: login.html"); exit(); }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomo: Bases de Datos - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tomo.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="aprender.php">Aprender</a>
+            <a href="desafios.html">Desafíos</a>
+            <a href="teoria.php" style="color: var(--accent-blue);">Teoría</a>
+            <a href="tutoriales.html">Tutoriales</a>
+            <a href="roles.html" class="btn-ingresar">Ingresar</a>
+        </nav>
+    </header>
+
+    <main class="tomo-main">
+        <div class="tomo-top-bar">
+            <a href="teoria.php" class="btn-volver">⬅ Volver a la Biblioteca</a>
+            <span class="tomo-badge" style="background: rgba(2, 119, 189, 0.2); color: #4fc3f7; border-color: #0288d1;">Tomo: Bases de Datos</span>
+        </div>
+
+        <div class="tomo-layout">
+            <aside class="tomo-sidebar">
+                <h3 style="color: #29b6f6;">Índice del Tomo</h3>
+                <ul class="indice-lista">
+                    <li><a href="#cap1" class="activo">1. ¿Qué es una Base de Datos?</a></li>
+                    <li><a href="#cap2">2. Tablas, Filas y Columnas</a></li>
+                    <li><a href="#cap3">3. Tu primera consulta SQL</a></li>
+                    <li><a href="#cap4">4. Llaves Primarias (El DNI)</a></li>
+                </ul>
+            </aside>
+
+            <article class="tomo-content">
+                <h1 class="tomo-titulo" id="cap1">1. ¿Qué es una Base de Datos?</h1>
+                <p>Una Base de Datos (BD) es como un archivero gigante y súper organizado. Si en tu juego quieres guardar el progreso de los jugadores para que no pierdan sus cosas al apagar la computadora, necesitas una BD.</p>
+
+                <hr class="separador">
+
+                <h2 id="cap2" style="color: #29b6f6;">2. Tablas, Filas y Columnas</h2>
+                <p>En las bases de datos relacionales (las más famosas), la información se guarda igualito que en una hoja de Excel.</p>
+                <ul>
+                    <li><strong>La Tabla:</strong> Es la hoja entera. Ej: La tabla "Usuarios".</li>
+                    <li><strong>Las Columnas:</strong> Son las características. Ej: Nombre, Edad, Puntos.</li>
+                    <li><strong>Las Filas:</strong> Es cada registro individual. Ej: "Peppa", "12", "5000".</li>
+                </ul>
+
+                <hr class="separador">
+
+                <h2 id="cap3" style="color: #29b6f6;">3. Tu primera consulta SQL</h2>
+                <p>El lenguaje <strong>SQL</strong> es la forma en la que "hablamos" con la base de datos para pedirle información. Literalmente le decimos "Selecciona esto de aquí".</p>
+
+                <div class="caja-codigo" style="border-color: #29b6f6;">
+                    <pre><code>
+-- Para ver TODOS los datos de la tabla usuarios:
+SELECT * FROM Usuarios;
+
+-- Para ver solo a los jugadores con más de 1000 puntos:
+SELECT nombre, puntos 
+FROM Usuarios 
+WHERE puntos > 1000;
+                    </code></pre>
+                </div>
+
+                <hr class="separador">
+
+                <h2 id="cap4" style="color: #29b6f6;">4. Llaves Primarias (Primary Key)</h2>
+                <p>En una base de datos, no podemos confundir a los usuarios. ¿Qué pasa si hay dos personas llamadas "Peppa"? Para eso existen las Llaves Primarias.</p>
+                <p>Una <strong>Primary Key (PK)</strong> es como tu número de DNI o tu carnet de estudiante. Es un número único de identificación que nunca se repite. Así, si queremos buscar a alguien, lo buscamos por su ID y no por su nombre.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+    <a href="nosotros.html">Sobre nosotros</a>
+    <a href="terminos.html">Términos</a>
+    <a href="privacidad.html">Privacidad</a>
+</div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Administrador - Dev Path</title>
+    <link rel="icon" type="image/png" href="media/img/logos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/registroe.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.php" class="logo-container">
+            <img src="media/img/logos.png" alt="Dev Path Logo">
+            <div class="logo-text">Dev<br><span>Path</span></div>
+        </a>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-banner">
+                <div class="banner-content">
+                    <img src="media/img/peppa.png" alt="Peppa Admin" class="peppa-icon">
+                    <h2>Centro de Control</h2>
+                    <p>Acceso restringido. Regístrate para gestionar la seguridad, los usuarios y las bases de datos de la galaxia.</p>
+                </div>
+            </div>
+
+            <div class="auth-form-box">
+                <h2 class="form-title">Activar Cuenta Admin</h2>
+                
+                <form action="registro-admin.php" method="POST" class="auth-form">
+                    <input type="hidden" name="rol" value="admin">
+
+                    <div class="input-group">
+                        <input type="text" name="nombre" placeholder="ID de Administrador" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="correo" placeholder="Correo de sistema" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Llave de acceso" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Activar Administrador</button>
+                </form>
+
+                <p class="login-text">
+                    ¿Ya tienes acceso? <a href="login.html">Inicia Sesión aquí</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="media/img/logos.png" alt="Dev Path Logo">
+                <span>Dev Path</span>
+            </div>
+            <p>¡Aprende a programar en una dulce aventura espacial!</p>
+            <div class="footer-links">
+                <a href="nosotros.html">Sobre nosotros</a>
+                <a href="terminos.html">Términos</a>
+                <a href="privacidad.html">Privacidad</a>
+            </div>
+            <p class="copyright">&copy; 2026 Dev Path. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

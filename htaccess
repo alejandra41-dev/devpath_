@@ -1,0 +1,10 @@
+# Bloquea el acceso directo a conexion.php y .env desde el navegador
+<Files "conexion.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files ".env">
+    Order Allow,Deny
+    Deny from all
+</Files>
